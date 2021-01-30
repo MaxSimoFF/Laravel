@@ -21,6 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'mobile', // error :) it does not need to insert this column also xD Shit.
+        'expire',
     ];
 
     /**
