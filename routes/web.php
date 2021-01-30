@@ -3,7 +3,10 @@
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
+
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +36,11 @@ Route::get('/sendmail', [MailController::class, 'sendMail']);
 
 Auth::routes(['verify' => true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+
+/*
+| Authentication with facebook ( Login with facebook ).
+*/
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+
+

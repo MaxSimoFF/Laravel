@@ -77,6 +77,12 @@
                                     </a>
                                 @endif
                             </div>
+                            <div class="col-md-8 offset-md-4 mt-1">
+                                
+                                    <a class="btn btn-info" href="{{ URL('/auth/facebook/') }}">
+                                        {{ __('Login with facebook') }}
+                                    </a>
+                            </div>
                         </div>
                     </form>
                 </div>
