@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
@@ -43,4 +44,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 
+Route::resource('player', PlayersController::class);
 

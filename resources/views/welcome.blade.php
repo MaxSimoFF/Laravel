@@ -37,6 +37,7 @@
             @endif
             <div class="hidden fixed top-0 px-6 py-4 sm:block">
                 <a href="{{ url('employee') }}" class="text-sm text-gray-700 underline">Employee</a>
+                <a href="{{ route('player.index') }}" class="text-sm text-gray-700 underline ml-4">Players</a>
             </div>
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">

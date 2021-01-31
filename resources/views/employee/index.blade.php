@@ -20,6 +20,10 @@
         <div class="row py-1">
             <div class="w-100">
                 <div class="card rounded shadow border-0">
+                    <a href="/" class="btn btn-link position-absolute right-0">
+                        <i class="fa fa-chevron-left fa-lg fa-fw"></i>
+                        Home
+                    </a>
                     <div class="card-body p-5 bg-white rounded">
                         <div class="table-responsive">
                             <a href="/employee/create" class="btn btn-primary">Add New Employee</a><br><br>
