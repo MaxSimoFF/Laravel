@@ -149,8 +149,8 @@ class EmployeeController extends Controller
     protected function validateMessages()
     {
         return $messages = [
-            'first_name.alpha_dash' => 'First name field contain forbiden symbol',
-            'last_name.alpha_dash' =>'Last name field contain forbiden symbol',
+            'first_name.alpha_dash' => 'First name field contain forbidden symbol',
+            'last_name.alpha_dash' =>'Last name field contain forbidden symbol',
             'email_address.required' => 'E-mail is required',
             'email_address.unique' => 'This email is already exist',
         ];
