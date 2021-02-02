@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PlayersController;
@@ -44,5 +45,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 
+/*
+** Ajax
+*/
 Route::resource('player', PlayersController::class);
+
+Route::get('/adult', [CustomAuthController::class, 'adult']);
+
 
