@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PlayersController;
+use App\Http\Controllers\Relation\RelationsController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
@@ -46,10 +47,19 @@ Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 
 /*
-** Ajax
+| Ajax.
 */
 Route::resource('player', PlayersController::class);
 
+/*
+| Custom middleware check expire if 1 then show page else gotta home.
+*/
 Route::get('/adult', [CustomAuthController::class, 'adult']);
+
+/*
+| Relations between tables
+*/
+Route::get('doctor-hospital', [RelationsController::class, 'getDoctorHospital']);
+Route::get('doctors-services', [RelationsController::class, 'getDoctorServices']);
 
 
