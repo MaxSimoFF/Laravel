@@ -14,6 +14,6 @@ class SocialController extends Controller
     public function loginWithFacebook()
     {
         $user = Socialite::driver('facebook')->user();
-        return response()->json($user);
+        return dd(response()->json($user));
     }
 }

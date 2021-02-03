@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker;
 use Illuminate\Support\Facades\Validator;
 
 class EmployeeController extends Controller
@@ -17,7 +16,6 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        // return Faker::create()->email;
         $employees = Employee::paginate(5);
         return view('employee.index', compact('employees'));
     }

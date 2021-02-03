@@ -177,7 +177,8 @@ return [
 
 
         // My service Provider
-        Laravel\Socialite\SocialiteServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class, // for auth with facebook.
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class, // for localization.
 
 
     ],
@@ -234,6 +235,8 @@ return [
 
         // My aliases
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+        
 
 
     ],

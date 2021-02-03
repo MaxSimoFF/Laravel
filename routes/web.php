@@ -30,6 +30,8 @@ Route::get('/', function () {
 // Route::view('/employee/create', 'employee.create');
 // Route::post('/employee', [EmployeeController::class, 'store']);
 // Route::get('/employee/{employee}', [EmployeeController::class, 'destroy']);
+
+
 Route::resource('employee', EmployeeController::class);
 
 Route::get('/session/get', [SessionController::class, 'getSession']);
@@ -37,8 +39,12 @@ Route::get('/session/store', [SessionController::class, 'storeSession']);
 Route::get('/session/delete', [SessionController::class, 'deleteSession']);
 Route::get('/sendmail', [MailController::class, 'sendMail']);
 
-Auth::routes(['verify' => true]);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+// Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+// {
+    Auth::routes(['verify' => true]);
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+
+// });
 
 /*
 | Authentication with facebook ( Login with facebook ).
@@ -61,5 +67,7 @@ Route::get('/adult', [CustomAuthController::class, 'adult']);
 */
 Route::get('doctor-hospital', [RelationsController::class, 'getDoctorHospital']);
 Route::get('doctors-services', [RelationsController::class, 'getDoctorServices']);
+
+
 
 
