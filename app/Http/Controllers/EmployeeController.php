@@ -18,7 +18,7 @@ class EmployeeController extends Controller
     public function index()
     {
         // return Faker::create()->email;
-        $employees = Employee::all();
+        $employees = Employee::paginate(5);
         return view('employee.index', compact('employees'));
     }
 

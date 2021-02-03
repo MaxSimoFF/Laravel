@@ -1,5 +1,15 @@
 @extends('layout')
 @section('title', 'Employees')
+@section('style')
+<style>
+    nav[role=navigation] svg {
+        width:30px;
+    }
+    nav[role=navigation].flex.justify-between.flex-1{
+        display:none;
+    }
+</style>
+@stop
 @section('content')
     <div class="container py-5">
         <header class="text-center text-dark">
@@ -63,6 +73,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{ $employees->links() }}
                         </div>
                     </div>
                 </div>
