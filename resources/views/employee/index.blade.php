@@ -14,17 +14,10 @@
     <div class="container py-5">
         <header class="text-center text-dark">
             <h1 class="display-4">Employees Information</h1>
-            @if (Session::has('success') || Session::has('error'))
-                <div class="alert @if(Session::has('success')) alert-success @else alert-danger @endif w-50 mx-auto alert-dismissible fade show">
-                    @if (Session::has('success'))
-                        {{ Session::get('success') }}
-                    @else
-                        {{ Session::get('error') }}
-                    @endif
-                    <button type="button" class="close" data-dismiss="alert">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+            @if (Session::has('success'))
+                <x-alert :content="Session::get('success')" type="success"  class="w-50 mx-auto" />
+            @elseif (Session::has('error'))
+                <x-alert :content="Session::get('error')" type="danger"  class="w-50 mx-auto" />
             @endif
         </header>
         <div class="row py-1">

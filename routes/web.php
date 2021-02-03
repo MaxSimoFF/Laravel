@@ -41,6 +41,7 @@ Route::get('/sendmail', [MailController::class, 'sendMail']);
 
 // Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 // {
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Auth::routes(['verify' => true]);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 

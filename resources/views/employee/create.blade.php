@@ -1,4 +1,6 @@
 @extends('layout')
+@section('title', 'Add Employee')
+
 @section('style')
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
@@ -22,7 +24,6 @@
     </style>
 @endsection
 
-@section('title', 'Edit Employee')
 @section('content')
     <div class="container">
         <form action="/employee" method="post" class="my-3 border rounded w-75 mx-auto">
@@ -34,54 +35,16 @@
             </div>
                 <div class="row px-3 py-3">
 
-                    <div class="col-md-12 my-1">
-                        <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">First name</span>
-                            </div>
-                            <input class="form-control @error('first_name') is-invalid @enderror" type="text"
-                                name="first_name" value="{{ old('first_name') }}">
-                        </div>
-                        @error('first_name') <span class="text-danger pl-2">{{ $message }}</span>@enderror
-                    </div>
+                    <x-form.employee.input name="first_name" span-text="First name"/>
+                    <x-form.employee.input name="last_name" span-text="Last name"/>
+                    <x-form.employee.input name="age" span-text="Age"/>
+                    <x-form.employee.input name="email_address" span-text="E-mail Address" type="email"/>
 
-                    <div class="col-md-12 my-1">
-                        <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Last name</span>
-                            </div>
-                            <input class="form-control @error('last_name') is-invalid @enderror" type="text"
-                                name="last_name" value="{{ old('last_name') }}">
-                        </div>
-                        @error('last_name') <span class="text-danger pl-2">{{ $message }}</span>@enderror
-                    </div>
-
-                    <div class="col-md-12 my-1">
-                        <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Age</span>
-                            </div>
-                            <input class="form-control @error('age') is-invalid @enderror" type="text" name="age"
-                                value="{{ old('age') }}">
-                        </div>
-                        @error('age') <span class="text-danger pl-2">{{ $message }}</span>@enderror
-                    </div>
-
-                    <div class="col-md-12 my-1">
-                        <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">E-mail Address</span>
-                            </div>
-                            <input class="form-control @error('email_address') is-invalid @enderror" type="email"
-                                name="email_address" value="{{ old('email_address') }}">
-                        </div>
-                        @error('email_address') <span class="text-danger pl-2">{{ $message }}</span>@enderror
-                    </div>
                     <div class="col-md-12 text-center">
                         <button type="submit" class="btn btn-primary btn-lg w-50"><strong>Add Employee</strong></button>
                     </div>
 
-                </div> {{-- End row --}}
+                </div>
         </form>
     </div>
 @endsection
